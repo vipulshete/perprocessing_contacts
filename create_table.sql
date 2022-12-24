@@ -1,11 +1,19 @@
-create table my_first_db.student(
-id int,
-name text,
-marks int);
+-- change password (no password)
 
+sudo mysql -u root
+USE mysql;
+SELECT User, Host, plugin FROM mysql.user;
+UPDATE user SET plugin='mysql_native_password' WHERE User='root';
+FLUSH PRIVILEGES;
+exit;
 
+-- Create database and table
 
-CREATE TABLE my_first_db.contacts_encoding(
+CREATE database address_book;
+ 
+Use address_book;
+
+CREATE TABLE contacts(
 id TEXT,
 first_name TEXT,
 last_name TEXT,
@@ -15,3 +23,7 @@ email TEXT,
 Is_mail_send int,
 Stream TEXT,
 Type_of_strem TEXT);
+ 
+Show tables;
+ 
+Describe table contacts;

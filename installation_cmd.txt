@@ -1,0 +1,42 @@
+Install pyspark, spark and MySQL
+
+The steps to install pyspark and spark 
+sudo apt-get update
+sudo apt-get upgrade  #Optional
+sudo apt install python3-pip
+pip install pyspark
+
+Steps to install spark
+
+sudo apt-get upgrade  #Optional
+sudo apt install python3-pip
+sudo apt install openjdk-8-jdk -y
+
+wget https://dlcdn.apache.org/spark/spark-3.3.1/spark-3.3.1-bin-hadoop3.tgz
+
+tar xvf spark-*
+sudo mv spark-3.3.1-bin-hadoop3 /opt/spark
+
+echo "export SPARK_HOME=/home/ubuntu/spark_new" > ~/.profile
+echo "export PATH=$PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin" > ~/.profile
+echo "export PYSPARK_PYTHON=/usr/bin/python3" > ~/.profile
+source ~/.profile
+Steps to install MySQL
+
+sudo apt-get update
+sudo apt-get upgrade  #Optional
+
+## install my-sql
+sudo apt install mysql-server
+sudo apt install mysql-client
+mysql --version
+
+## Securing MySQL
+sudo mysql_secure_installation
+(set New-Passward)
+
+## check service is running 
+sudo systemctl status mysql
+
+## login to my-sql
+sudo mysql -u root
